@@ -18,32 +18,32 @@ data from the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>. In particular, the file used was the "Individual household
 electric power consumption Data Set"
 * <b>Results of running the Code</b>:
-     * File will be douwnloaded, unzipped and read in the <b>Download</b> subdirectory
-     * Plots png files will be created in the <b>Download</b> subdirectory
+     * File will be downloaded, unzipped and read in the <b>Download</b> subdirectory
+     * Plots png files will be created in the <b>Figures</b> subdirectory
 
 <hr>
 ### Plot 1
-![plot 1](figure/plot1.png) 
+![plot 1](plot1.png) 
 
-![Plot 1 code](figure/plot1.R)
+![Plot 1 code](plot1.R)
 
 <hr>
 ### Plot 2
-![plot 2](figure/plot2.png) 
+![plot 2](plot2.png) 
 
-![Plot 2 code](figure/plot2.R)
+![Plot 2 code](plot2.R)
 
 <hr>
 ### Plot 3
-![plot 3](figure/plot3.png) 
+![plot 3](plot3.png) 
 
-![Plot 3 code](figure/plot3.R)
+![Plot 3 code](plot3.R)
 
 <hr>
 ### Plot 4
-![plot 4](figure/plot4.png) 
+![plot 4](plot4.png) 
 
-![Plot 4 code](figure/plot4.R)
+![Plot 4 code](plot4.R)
 
 
 

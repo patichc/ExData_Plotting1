@@ -1,24 +1,29 @@
 library(graphics)
 
-## WORKING DIRECTORY
-##  Sets the working directory to the forder where the Project1 will be developed
+## WORKING DIRECTORY PREPARATION
+##  Sets the working directory to the forder for Project 1
 setwd("~/DataScientist/ExploratoryDataA/Project 1")
 ## Set download directory if the directory does not exists it is created
 DownloadDirectory <- "Downloads"
 if (!(file.exists(DownloadDirectory))) {
-  dir.create(DownloadDirectory)
+        dir.create(DownloadDirectory)
 }
-##  Set the working directory to the forder where the Project 1 Downloads will be stored
-setwd("~/DataScientist/ExploratoryDataA/Project 1/Downloads")
+## Set figures directory if the directory does not exists it is created
+FiguresDirectory <- "Figures"
+if (!(file.exists(FiguresDirectory))) {
+        dir.create(FiguresDirectory)
+}
 
 ## DOWNLOAD
+##  Set the working directory to the forder where the Project 1 Downloads will be stored
+setwd("~/DataScientist/ExploratoryDataA/Project 1/Downloads")
 ## Downloads the Electric Power Consumption (EPC) data into a local file
 EPC.url="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 EPC.zipFileName="ElectricHouseholdPowerConsumption.zip"
 EPC.zipFile=download.file(
-  url = EPC.url,
-  destfile = EPC.zipFileName,
-  mode = "wb")
+        url = EPC.url,
+        destfile = EPC.zipFileName,
+        mode = "wb")
 EPC.downloadDate <- date
 ## Unzip the file on the local directory and the extracted file name is EPC.filename
 EPC.fileName <- unzip(zipfile = EPC.zipFileName)
@@ -43,6 +48,8 @@ EPC.dataSubset <- subset(EPC.tidyData,
                         DateTimePOSIXct <  strptime("3/2/2007 00:00:00","%d/%m/%Y %H:%M:%OS"))
 
 ## PLOTS
+##  Set the working directory to the forder where the Project 1 Figures will be stored
+setwd("~/DataScientist/ExploratoryDataA/Project 1/Figures")
 ## Open plot4.png file in working directory
 png("plot4.png",width = 480, height = 480)
 ## Create 4 plot areas
@@ -59,6 +66,7 @@ matplot(EPC.dataSubset[,"DateTimePOSIXct"],
               EPC.dataSubset[,"Sub_metering_2"],
               EPC.dataSubset[,"Sub_metering_3"]),
         type="l",
+        lty=c(1,1,1),
         col=c(1,2,4),
         xlim = c(1170300000,1170500000),
         xlab = "",
@@ -70,7 +78,7 @@ axis.POSIXct (1,
               at = c(strptime("1/2/2007 00:00:00","%d/%m/%Y %H:%M:%OS"),
                      strptime("2/2/2007 00:00:00","%d/%m/%Y %H:%M:%OS"),
                      strptime("3/2/2007 00:00:00","%d/%m/%Y %H:%M:%OS")),
-              format = "%w", 
+              format = "%a", 
               xaxt = "s")
 ## add legend to plot
 legend("topright", 

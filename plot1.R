@@ -1,17 +1,22 @@
 library(graphics)
 
-## WORKING DIRECTORY
-##  Sets the working directory to the forder where the Project1 will be developed
+## WORKING DIRECTORY PREPARATION
+##  Sets the working directory to the forder for Project 1
 setwd("~/DataScientist/ExploratoryDataA/Project 1")
 ## Set download directory if the directory does not exists it is created
 DownloadDirectory <- "Downloads"
 if (!(file.exists(DownloadDirectory))) {
   dir.create(DownloadDirectory)
 }
-##  Set the working directory to the forder where the Project 1 Downloads will be stored
-setwd("~/DataScientist/ExploratoryDataA/Project 1/Downloads")
+## Set figures directory if the directory does not exists it is created
+FiguresDirectory <- "Figures"
+if (!(file.exists(FiguresDirectory))) {
+        dir.create(FiguresDirectory)
+}
 
 ## DOWNLOAD
+##  Set the working directory to the forder where the Project 1 Downloads will be stored
+setwd("~/DataScientist/ExploratoryDataA/Project 1/Downloads")
 ## Downloads the Electric Power Consumption (EPC) data into a local file
 EPC.url="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 EPC.zipFileName="ElectricHouseholdPowerConsumption.zip"
@@ -43,6 +48,8 @@ EPC.dataSubset <- subset(EPC.tidyData,
                         DateTimePOSIXct <  strptime("3/2/2007 00:00:00","%d/%m/%Y %H:%M:%OS"))
 
 ## PLOTS
+##  Set the working directory to the forder where the Project 1 Figures will be stored
+setwd("~/DataScientist/ExploratoryDataA/Project 1/Figures")
 ## Open plot1.png file in working directory
 png("plot1.png",width = 480, height = 480)
 ## Plot an histagram for the variable Global Active Power
